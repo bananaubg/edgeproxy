@@ -1,6 +1,10 @@
-name = "edge-rewriter"
-main = "src/worker.js"
-compatibility_date = "2025-08-26"
+{
+  "name": "edge-rewriter",
+  "main": "src/worker.js",
+  "compatibility_date": "2025-08-26",
 
-# Serve the static frontend too (optional; comment out if you don’t want it)
-assets = { directory = "./public" }
+  // Serve the static frontend too (comment this out if you don’t need it)
+  "assets": {
+    "directory": "./public"
+  }
+}
