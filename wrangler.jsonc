@@ -1,5 +1,52 @@
 {
-  "name": "edge-rewriter",
+  "name": "edgeproxy",
   "main": "src/worker.js",
-  "compatibility_date": "2025-08-26"
+  "compatibility_date": "2025-09-13",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  // no ALLOWED_HOSTS variable, so all hosts allowed
+  "vars": {},
+
+  "kv_namespaces": [
+    {
+      "binding": "EDGE_LOGS",
+      "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    }
+  ],
+
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "RateLimiter",
+        "class_name": "RateLimiter"
+      }
+    ]
+  },
+
+  "env": {
+    "dev": {
+      "name": "edgeproxy-dev",
+      "route": "",
+      "workers_dev": true
+    },
+    "prod": {
+      "name": "edgeproxy-prod",
+      "route": "",
+      "workers_dev": false,
+      "kv_namespaces": [
+        {
+          "binding": "EDGE_LOGS",
+          "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        }
+      ],
+      "durable_objects": {
+        "bindings": [
+          {
+            "name": "RateLimiter",
+            "class_name": "RateLimiter"
+          }
+        ]
+      }
+    }
+  }
 }
