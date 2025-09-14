@@ -26,25 +26,6 @@
     "dev": {
       "name": "edgeproxy-dev",
       "workers_dev": true
-    },
-    "prod": {
-      "name": "edgeproxy-prod",
-      "route": "", // replace with real domain when ready
-      "workers_dev": false,
-      "kv_namespaces": [
-        {
-          "binding": "EDGE_LOGS",
-          "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-        }
-      ],
-      "durable_objects": {
-        "bindings": [
-          {
-            "name": "RateLimiter",
-            "class_name": "RateLimiter"
-          }
-        ]
-      }
     }
   }
 }
