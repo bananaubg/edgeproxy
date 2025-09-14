@@ -1,4 +1,16 @@
-name = "edgeproxy"
-main = "src/worker.js"
+name = "edgeproxy-ultimate"
+main = "src/edgeproxy-ultimate.js"
 compatibility_date = "2025-09-13"
 workers_dev = true
+
+# env vars
+[vars]
+API_KEY = "Potato"
+ALLOWED_HOSTS = ""      # blank = allow all
+MAX_REWRITE_BYTES = "1000000"
+CACHE_TTL = "3600"
+
+# KV namespace for rate limiting
+[[kv_namespaces]]
+binding = "RATE_KV"
+id = "PUT_REAL_KV_ID_HERE"
