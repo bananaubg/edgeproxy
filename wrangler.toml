@@ -13,4 +13,4 @@ CACHE_TTL = "3600"
 # KV namespace for rate limiting
 [[kv_namespaces]]
 binding = "RATE_KV"
-id = "PUT_REAL_KV_ID_HERE"
+id = "uSRJDR6vbeZRNm5G2iLdTweg2FNG9Z4xTdnJTTNP"
