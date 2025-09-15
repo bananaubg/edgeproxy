@@ -1,0 +1,32 @@
+{
+  // Worker name (shows up in dash + workers.dev URL)
+  "name": "edgeproxy",
+
+  // Entry point
+  "main": "src/worker.js",
+
+  // Cloudflare compat layer (use today's date)
+  "compatibility_date": "2025-09-15",
+
+  // Required for Node-like modules
+  "compatibility_flags": ["nodejs_compat"],
+
+  // Use workers.dev subdomain (no domain needed)
+  "workers_dev": true,
+
+  // No KV / Durable / vars needed
+  "vars": {},
+
+  "env": {
+    "dev": {
+      "name": "edgeproxy-dev",
+      "workers_dev": true,
+      "route": ""
+    },
+    "prod": {
+      "name": "edgeproxy-prod",
+      "workers_dev": true,
+      "route": ""
+    }
+  }
+}
